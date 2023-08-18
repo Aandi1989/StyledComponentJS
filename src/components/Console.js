@@ -8,7 +8,10 @@ background:black;
 font-size:24px;
 border:none;
 resize:none;
-color:${({color}) => color || 'white'}
+color:${({color}) => color || 'white'};
+&:focus {
+    outline:none;
+}
 `
 
  const Console = (props) => {
