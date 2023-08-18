@@ -20,7 +20,7 @@ function App() {
       </Flex>
       <Flex direction="column">
         <Console />
-        <Button align='flex-end'>Отправить</Button>
+        <Button color="green" outlined align='flex-end'>Отправить</Button>
       </Flex>
     </AppWrapper>
   );
