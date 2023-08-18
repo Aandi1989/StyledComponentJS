@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import styled, {createGlobalStyle} from 'styled-components';
+import styled, {createGlobalStyle, ThemeProvider} from 'styled-components';
 
 const Global = createGlobalStyle`
 *{
@@ -12,11 +12,20 @@ const Global = createGlobalStyle`
 }
 `
 
+const theme = {
+  colors:{
+    primary:'red',
+    secondary:'green',
+  }
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Global/>
-    <App />
+    <ThemeProvider theme={theme}>
+      <Global/>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

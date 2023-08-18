@@ -16,11 +16,11 @@ function App() {
   return (
     <AppWrapper>
       <Flex justify={"center"}>
-        <Title color={"green"}>Console cmd 20223. 18 August</Title>
+        <Title >Console cmd 20223. 18 August</Title>
       </Flex>
       <Flex direction="column" margin={'10px 0'}>
-        <Console color='green'/>
-        <Button color="green" align='flex-end'>Отправить</Button>
+        <Console />
+        <Button align='flex-end'>Отправить</Button>
       </Flex>
     </AppWrapper>
   );
