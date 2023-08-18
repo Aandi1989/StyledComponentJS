@@ -22,8 +22,13 @@ ${props => props.outlined && css`
 `}
 `
 
+const LargeButton = styled(StyledButton)`
+    font-size:32px;
+
+`
+
  const Button = (props) => {
-  return <StyledButton {...props}/>
+  return <LargeButton {...props}/>
 }
 
 export default Button
