@@ -1,5 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
+import Flex from './Flex';
+import Line from './Line';
 
 const StyledConsole = styled.textarea`
 width:100%;
@@ -8,14 +10,31 @@ background:black;
 font-size:24px;
 border:none;
 resize:none;
-color:${({color}) => color || 'white'};
+color: ${({color}) => color || 'white'};
 &:focus {
     outline:none;
 }
 `
 
- const Console = (props) => {
-  return <StyledConsole {...props}/>
+ const Console = ({...props}) => {   // запись ({color, ...props}) + <Line color={color}>{line}</Line> почему-то не стала работать
+  const [lines, setLines] = useState(['C/users/Shabany_TV>']) 
+  
+  const onKeyPress = e => {
+    if(e.charCode == 13){
+        setLines([...lines, 'C/users/Shabany_TV>'])
+    }
+  }
+
+  return (
+    <Flex>
+        <Flex direction={'column'} margin="0 10px">
+            {lines.map(line => 
+                <Line color={props.color}>{line}</Line>
+            )}
+        </Flex>
+        <StyledConsole onKeyPress={onKeyPress} {...props}/>
+    </Flex>
+  )
 }
 
 export default Console
